@@ -9,9 +9,9 @@ class BookwormBuddy::Scraper
                 category_hash[:name] = link.text.strip
                 category_hash[:url] = link.css('a.bread-crumbs__item').attr('href').value
                 categories << category_hash 
-                #binding.pry
             end
         categories.slice!(-1)
-        categories.each_with_index {|category, index| puts "#{index+1}. #{category[:name]}"
+        categories.each_with_index {|category, index| puts "#{index+1}. #{category[:name]}"}
+        binding.pry
     end
 end

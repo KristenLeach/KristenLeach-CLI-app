@@ -1,6 +1,10 @@
 class BookwormBuddy::CLI
 
     def call
-        "Welcome"
+        list
+    end
+
+    def list
+        BookwormBuddy::Scraper.list_categories
     end
 end
