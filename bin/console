@@ -11,4 +11,6 @@ require "bookworm_buddy"
 # Pry.start
 
 require "irb"
-IRB.start(__FILE__)
+#IRB.start(__FILE__)
+
+BookwormBuddy::Scraper.list_categories
