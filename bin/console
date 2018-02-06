@@ -14,5 +14,6 @@ require "irb"
 #IRB.start(__FILE__)
 
 #BookwormBuddy::CLI.new.call
-BookwormBuddy::Scraper.list_categories
+#BookwormBuddy::Scraper.list_categories
 #BookwormBuddy::Scraper.list_books_by_category
+BookwormBuddy::Scraper.book_description()

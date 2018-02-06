@@ -32,10 +32,11 @@ class BookwormBuddy::Scraper
     end
 
     def self.book_description(book_number)
-        description_link = @@bestsellers[book_number.to_i - 1] && @@bestsellers[book_number.to_i - 1][:description_url]
+        description_link = @@bestsellers[4.to_i - 1] && @@bestsellers[book_number.to_i - 1][:description_url]
         doc = Nokogiri::HTML(open(description_link))
-
-        doc.css("div#productinfooverview p").each do |description|
+        doc.css("div#productinfooverview").each do |info|
+            description = info.css('p').text
+    end
     end
 
 end
