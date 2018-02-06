@@ -31,8 +31,11 @@ class BookwormBuddy::Scraper
        @@bestsellers.each_with_index {|book, index| puts "#{index+1}. #{book[:title]} - by: #{book[:author]} - #{book[:price]}"} 
     end
 
-    def self.book_description
-        #must grab short description of book
+    def self.book_description(book_number)
+        description_link = @@bestsellers[book_number.to_i - 1] && @@bestsellers[book_number.to_i - 1][:description_url]
+        doc = Nokogiri::HTML(open(description_link))
+
+        doc.css("div#productinfooverview p").each do |description|
     end
 
 end
