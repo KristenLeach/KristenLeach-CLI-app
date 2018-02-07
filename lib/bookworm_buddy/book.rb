@@ -2,6 +2,13 @@
 class BookwormBuddy::Book
     attr_accessor :title, :author, :price, :description
 
-    def initialize(category_hash)
+    #initialized with attribute hash 
+    def initialize(attribute_hash)
+        
     end
+
+    def description
+        #prints description of individual book when called 
+    end
+    
 end
