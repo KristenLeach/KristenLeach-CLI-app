@@ -25,7 +25,7 @@ class BookwormBuddy::CLI
     end
 
     def list
-        categories = BookwormBuddy::Scraper.list_categories
+        categories = BookwormBuddy::Scraper.get_categories
         BookwormBuddy::Category.create(categories)
         
         puts "----------------------------------------"
