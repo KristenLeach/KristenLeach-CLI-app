@@ -25,7 +25,9 @@ class BookwormBuddy::CLI
     end
 
     def list
-        BookwormBuddy::Scraper.list_categories
+        categories = BookwormBuddy::Scraper.list_categories
+        BookwormBuddy::Category.create(categories)
+        
         puts "----------------------------------------"
         puts "To see the top 20 bestsellers in a category, enter the category number below."
         puts "----------------------------------------"

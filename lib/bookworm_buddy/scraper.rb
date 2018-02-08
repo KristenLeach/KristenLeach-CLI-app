@@ -1,5 +1,6 @@
 require 'pry'
 class BookwormBuddy::Scraper
+    attr_accessor :category
     @@categories = []
     @@bestsellers = []
     
@@ -11,9 +12,9 @@ class BookwormBuddy::Scraper
                 category_hash[:url] = "https://www.barnesandnoble.com#{link.css('a.bread-crumbs__item').attr('href').value}"
                 @@categories << category_hash 
             end
-        @@categories.slice!(-1)
-        @@categories.each_with_index {|category, index| puts "#{index+1}. #{category[:name]}"}
-        list_books_by_category("7")
+            @@categories.slice!(-1)
+            BookwormBuddy::Category.create(@@categories)
+        #list_books_by_category("7")
     end
 
     def self.list_books_by_category(category_number)
