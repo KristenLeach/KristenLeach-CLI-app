@@ -36,12 +36,12 @@ class BookwormBuddy::CLI
     end
 
     def bestsellers
-        #input = gets.to_i
-        #if input.between?(1, 50)
+        input = gets.to_i 
+        if input.between?(1, 50)
             puts "this is working"
        # else 
            # puts "... I am not sure what you meant. Please try again."
-        #end
+        end
     end
 
     def exit

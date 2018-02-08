@@ -14,7 +14,7 @@ class BookwormBuddy::Category
     end
 
     def self.create(category_array)
-        category_array.each {|category| BookwormBuddy::Category.new(category)}
+        category_array.each {|category| self.new(category)}
     end
 
     def self.list_categories

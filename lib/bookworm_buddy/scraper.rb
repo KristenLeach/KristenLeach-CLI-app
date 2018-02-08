@@ -14,7 +14,7 @@ class BookwormBuddy::Scraper
             end
             @@categories.slice!(-1)
             BookwormBuddy::Category.create(@@categories) 
-            get_books_by_category()    
+            get_books_by_category(1)    
     end
 
     def self.get_books_by_category(category_number)
@@ -26,18 +26,19 @@ class BookwormBuddy::Scraper
                 attributes_hash[:author] = book.css('div.product-shelf-author.contributors a').first.text
                 attributes_hash[:price] = book.css("span.current a").first.text
                 attributes_hash[:description_url] = "https://www.barnesandnoble.com#{book.css('h3.product-info-title a').attr('href').value}"
+                attributes_hash[:description] = nil
                 @@bestsellers << attributes_hash
             end
        BookwormBuddy::Book.create(@@bestsellers)
     end
 
     def self.get_description(book_number)
-        description_link = @@bestsellers[book_number.to_i - 1][:description_url]
+        book = BookwormBuddy::Book::ALL[book_number.to_i - 1]
+        description_link = book.description_url
         doc = Nokogiri::HTML(open(description_link))
-            doc.css("div#Overview").each do |info|
-                description = info.css('div#productInfoOverview p').text
-                binding.pry
+             description = doc.css("div#Overview div#productInfoOverview p").text
+             book.description = description 
+             BookwormBuddy::Book.list_description(book.description)
     end
-    end
-
+   
 end

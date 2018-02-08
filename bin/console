@@ -16,4 +16,3 @@ require "irb"
 #BookwormBuddy::CLI.new.call
 #BookwormBuddy::Scraper.list_categories
 #BookwormBuddy::Scraper.list_books_by_category(4)
-#BookwormBuddy::Scraper.book_description(book_number = '4')

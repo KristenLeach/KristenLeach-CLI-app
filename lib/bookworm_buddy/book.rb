@@ -2,12 +2,12 @@
 require 'pry'
 class BookwormBuddy::Book
     attr_accessor :title, :author, :price, :description, :description_url
-    @@all = []
+    ALL = []
 
     #initialized with attribute hash 
     def initialize(bestseller_hash)
         bestseller_hash.each {|key, value| self.send("#{key}=", value)}
-        @@all << self 
+        ALL << self 
         #binding.pry
     end
 
@@ -16,10 +16,11 @@ class BookwormBuddy::Book
     end
 
     def self.list_books_by_category(category_number)
-        @@all.each_with_index {|book, index| puts "#{index+1}. \"#{book.title}\" - by: #{book.author} - #{book.price}"} 
+        ALL.each_with_index {|book, index| puts "#{index+1}. \"#{book.title}\" - by: #{book.author} - #{book.price}"}
+        BookwormBuddy::Scraper.get_description(1) 
     end
     
-    def self.add_description(description)
-        @description << description
+    def self.list_description(description)
+        puts "#{description}"
     end
 end
