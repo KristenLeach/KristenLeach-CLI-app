@@ -13,12 +13,11 @@ class BookwormBuddy::Scraper
                 @@categories << category_hash 
             end
             @@categories.slice!(-1)
-            BookwormBuddy::Category.create(@@categories) 
-            get_books_by_category(1)    
+            BookwormBuddy::Category.create(@@categories)   
     end
 
     def self.get_books_by_category(category_number)
-        bestseller_url = @@categories[category_number.to_i - 1] && @@categories[category_number.to_i - 1][:url]
+        bestseller_url = @@categories[category_number.to_i - 1][:url]
         doc = Nokogiri::HTML(open(bestseller_url))
             doc.css('div.col-lg-8.product-info-listView').each do |book|
                 attributes_hash = {}

@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 require_relative '../lib/bookworm_buddy.rb'
 
-BookwormBuddy::Scraper.get_categories
-BookwormBuddy::Category.list_categories
-BookwormBuddy::Book.list_books_by_category(1)
+#BookwormBuddy::Scraper.get_categories
+#BookwormBuddy::Category.list_categories
+#BookwormBuddy::Book.list_books_by_category(1)
 
 
 

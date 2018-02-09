@@ -16,8 +16,8 @@ class BookwormBuddy::Book
     end
 
     def self.list_books_by_category(category_number)
+        puts BookwormBuddy::Category::ALL[category_number.to_i - 1].name
         ALL.each_with_index {|book, index| puts "#{index+1}. \"#{book.title}\" - by: #{book.author} - #{book.price}"}
-        BookwormBuddy::Scraper.get_description(1) 
     end
     
     def self.list_description(description)
