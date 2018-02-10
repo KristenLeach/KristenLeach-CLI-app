@@ -6,12 +6,11 @@ require "bookworm_buddy/version"
 Gem::Specification.new do |spec|
   spec.name          = "bookworm_buddy"
   spec.version       = BookwormBuddy::VERSION
-  spec.authors       = ["KristenLeach"]
+  spec.authors       = ["Kristen Leach"]
   spec.email         = ["31492991+KristenLeach@users.noreply.github.com"]
 
-  spec.summary       = %q{: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{: Write a longer description or delete this line.}
-  spec.homepage      = "http://kristen_leach.com"
+  spec.summary       = %q{: Bookworm Buddy scrapes Barnes & Noble's 50 categories for their bestselling books and their descriptions.}
+  spec.homepage      = "https://github.com/KristenLeach/KristenLeach-CLI-app"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) {|repo_name| "https://github.com/#{KristenLeach-CLI-app}" }
 
-# Specify your gem's dependencies in bookworm_buddy.gemspec
 gemspec
