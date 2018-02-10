@@ -48,11 +48,11 @@ class BookwormBuddy::CLI
             BookwormBuddy::Scraper.get_books_by_category(input)
             BookwormBuddy::Book.list_books_by_category(input)
             puts "\n""----------------------------------------".colorize(:cyan)
-            puts "\n""To see the summary of a title that interests you, enter that number below. Otherwise, enter 'menu' to return to the main menu.".colorize(:green)
+            puts "\n""To see the summary of a title that interests you, enter that number below. Otherwise, enter 'list' to return to the list of categories, or 'exit' to exit.".colorize(:green)
             puts "\n""----------------------------------------""\n".colorize(:cyan)
             description
-        elsif input == "menu" 
-            main_menu
+        elsif input == "list" 
+            list
         elsif input == "exit"
             exit
         else 
@@ -66,11 +66,11 @@ class BookwormBuddy::CLI
         if input.to_i.between?(1, 20)
             BookwormBuddy::Scraper.get_description(input)
             puts "\n""----------------------------------------".colorize(:cyan)
-            puts "\n""To see another book, enter that number below. Otherwise, enter 'menu' to return to the main menu.".colorize(:green)
+            puts "\n""To see another book, enter that number below. Otherwise, enter 'list' to return to the list of categories, or 'exit' to exit.".colorize(:green)
             puts "\n""----------------------------------------""\n".colorize(:cyan)
             description
-        elsif input == "menu"
-            main_menu
+        elsif input == "list"
+            list
         elsif input == "exit" 
             exit 
         else 
