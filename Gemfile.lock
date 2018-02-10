@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bookworm_buddy (0.1.0)
+    bookworm_buddy (0.1.2)
       colorize (~> 0.8.1)
       nokogiri
 

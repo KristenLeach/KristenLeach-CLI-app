@@ -6,5 +6,4 @@ require_relative './bookworm_buddy/category'
 
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
 require 'colorize'
