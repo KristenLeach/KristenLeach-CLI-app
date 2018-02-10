@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kristen Leach"]
   spec.email         = ["kristenleach24@gmail.com"]
 
-  spec.summary       = %q{: Bookworm Buddy scrapes Barnes & Noble's book categories for bestselling books and their descriptions.}
+  spec.summary       = "Bookworm Buddy scrapes Barnes & Noble's book categories for bestselling books and their descriptions"
+  spec.description   = "Bookworm Buddy is a gem that allows you to choose from 50 Barnes & Noble book categories to see the top 20 bestselling books in that category. You can then choose a book from the list to see a short description. Happy reading!"
   spec.homepage      = "https://github.com/KristenLeach/KristenLeach-CLI-app"
   spec.license       = "MIT"
 
@@ -25,8 +26,8 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  #spec.bindir        = "exe"
+  spec.executables   << "bookworm_buddy"
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.16"
