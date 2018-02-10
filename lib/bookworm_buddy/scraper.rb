@@ -17,8 +17,11 @@ class BookwormBuddy::Scraper
     end
 
     def self.get_books_by_category(category_number)
+        @@bestsellers.clear
+        BookwormBuddy::Book.empty
         bestseller_url = @@categories[category_number.to_i - 1][:url]
         doc = Nokogiri::HTML(open(bestseller_url))
+        #binding.pry
             doc.css('div.col-lg-8.product-info-listView').each do |book|
                 attributes_hash = {}
                 attributes_hash[:title] = book.css('h3.product-info-title a').text
@@ -37,6 +40,7 @@ class BookwormBuddy::Scraper
         doc = Nokogiri::HTML(open(description_link))
              description = doc.css("div#Overview div#productInfoOverview p").text
              book.description = description 
+             BookwormBuddy::Book.list_title(book)
              BookwormBuddy::Book.list_description(book.description)
     end
    
