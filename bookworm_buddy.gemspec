@@ -7,16 +7,16 @@ Gem::Specification.new do |spec|
   spec.name          = "bookworm_buddy"
   spec.version       = BookwormBuddy::VERSION
   spec.authors       = ["Kristen Leach"]
-  spec.email         = ["31492991+KristenLeach@users.noreply.github.com"]
+  spec.email         = ["kristenleach24@gmail.com"]
 
-  spec.summary       = %q{: Bookworm Buddy scrapes Barnes & Noble's 50 categories for their bestselling books and their descriptions.}
+  spec.summary       = %q{: Bookworm Buddy scrapes Barnes & Noble's book categories for bestselling books and their descriptions.}
   spec.homepage      = "https://github.com/KristenLeach/KristenLeach-CLI-app"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = " Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = " Set to 'http://rubygems.org'"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -36,3 +36,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency "nokogiri"
   
 end
+
