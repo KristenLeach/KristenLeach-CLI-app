@@ -1,4 +1,3 @@
-require 'pry'
 class BookwormBuddy::Scraper
     attr_accessor :category
     @@categories = []

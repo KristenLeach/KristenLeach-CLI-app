@@ -1,4 +1,3 @@
-require 'pry'
 class BookwormBuddy::Book
     attr_accessor :title, :author, :price, :description, :description_url
     ALL = []
