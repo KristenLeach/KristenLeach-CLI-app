@@ -46,11 +46,16 @@ class BookwormBuddy::CLI
         input = gets.strip 
         if input.to_i.between?(1, 50)
             BookwormBuddy::Scraper.get_books_by_category(input)
+            if BookwormBuddy::Book::ALL.empty?
+                puts "\n""So sorry, that category seems to be empty at the moment. Please try another category!".colorize(:red)
+                bestsellers
+            else
             BookwormBuddy::Book.list_books_by_category(input)
             puts "\n""----------------------------------------".colorize(:cyan)
             puts "\n""To see the summary of a title that interests you, enter that number below. Otherwise, enter 'list' to return to the list of categories, or 'exit' to exit.".colorize(:green)
             puts "\n""----------------------------------------""\n".colorize(:cyan)
             description
+            end
         elsif input == "list" 
             list
         elsif input == "exit"

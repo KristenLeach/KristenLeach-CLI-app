@@ -12,7 +12,6 @@ class BookwormBuddy::Category
     end
 
     def self.list_categories
-        ALL.each_with_index {|category, index| puts "#{index+1}. #{category.name}"}   
+        ALL.each.with_index(1) {|category, index| puts "#{index}. #{category.name}"}
     end 
-    
 end

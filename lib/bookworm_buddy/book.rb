@@ -13,12 +13,7 @@ class BookwormBuddy::Book
 
     def self.list_books_by_category(category_number)
         puts BookwormBuddy::Category::ALL[category_number.to_i - 1].name.colorize(:magenta)
-        if ALL == [] 
-            puts "\n""So sorry, that category seems to be empty at the moment. Check back soon!".colorize(:red)
-            BookwormBuddy::CLI.new.main_menu
-        else
         ALL.each_with_index {|book, index| puts "#{index+1}. \"#{book.title}\" - by: #{book.author} - #{book.price}"}
-        end
     end
     
     def self.list_title(book)
